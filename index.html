@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDPtime</title>
+    <style>
+        body {
+            background-color: #fff;
+        }
+        .app{
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            margin: 2rem auto;
+        }
+        .app h1{
+            text-align: center;
+        }
+        .container {
+            box-shadow: 0 15px 70px #0000001a;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        footer {
+          padding: 10px 20px;
+          text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <h1>UDPtime</h1>
+        <div class="container">
+            <p>
+                UDPtime is a hobby project built to ping UDP protocols like Steam dedicated servers and display status using <a href="https://github.com/louislam/uptime-kuma" target="_new">Uptime Kuma</a>.
+            </p>
+            <h3>Steam</h3>
+            <ul>
+                <li><strong>Endpoint:</strong> /steam/game-type-id/ip-adress</li>
+                <li>
+                    <strong>Args:</strong>
+                    <ul>
+                        <li><strong>id:</strong> (requierd) game type id</li>
+                        <li><strong>ip:</strong> (requierd) server ip without port</li>
+                    </ul>
+                </li>
+                <li><strong>Return:</strong> json</li>
+            </ul>
+            <p style="text-align: center;">Supported Games can be <a href="https://github.com/gamedig/node-gamedig" target="_new">found here</a>.</p>
+        </div>
+        <footer>
+            <p>Powered by <a href="https://github.com/mattiasghodsian/udptime" target="_new">UDPtime</a></p>
+        </footer>
+    </div>
+</body>
+</html>
