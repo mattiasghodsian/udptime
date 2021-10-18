@@ -9,61 +9,367 @@
         body {
             background-color: #fff;
         }
+
         .app{
             max-width: 800px;
             width: 100%;
             position: relative;
             margin: 2rem auto;
+            font-family: sans-serif;
         }
-        .app h1{
+
+        header{
+            margin-bottom: 30px;
+        }
+
+        a:hover,
+        header h1 span{
+            color: #5cdd8b;
+        }
+
+        header h1,
+        header p{
             text-align: center;
         }
+
+        header p{
+            max-width: 500px;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+
         .container {
             box-shadow: 0 15px 70px #0000001a;
             padding: 10px 20px;
             border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
         }
+
+        .container h2{
+            margin-bottom: 0px;
+            font-size: 1.2em;
+        }
+
         footer {
-          padding: 10px 20px;
-          text-align: center;
+            font-size: 12px;
+            text-align: center;
+            color: rgba(0,0,0,.4);
+        }
+
+        footer a{
+            color: rgba(0,0,0,.4);
+        }
+
+        a{
+            text-decoration: none;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .toggle label {
+            display: inline-block;
+            cursor: pointer;
+            width: 100%;
+            position: relative;
+            user-select: none;
+            -webkit-user-select: none; 
+            -khtml-user-select: none; 
+            -moz-user-select: none; 
+            -ms-user-select: none;
+        }
+
+        .toggle .btn {
+            padding: 5px 0px;
+            border-radius: 3px;
+        }
+
+        .toggle .btn .method {
+            font-size: 14px;
+            font-weight: 700;
+            min-width: 80px;
+            padding: 6px 15px;
+            text-align: center;
+            border-radius: 3px;
+            background: #000;
+            text-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+            color: #fff;
+            background-color: #5cdd8b;
+        }
+
+        .toggle .btn .icon {
+            font-size: 30px;
+            position: absolute;
+            bottom: 3px;
+            right: 0px;
+        }
+
+        .toggle .content {
+            width: 100%;
+            height: auto;
+            display: none;
+            transition: all 0.5s;
+        }
+
+        .toggle.active .content {
+            display: block;
+        }
+
+        table{
+            position: relative;
+            width: 100%;
+            padding: 0 10px;
+            border-collapse: collapse;
+        }
+
+        table thead tr th {
+            text-align: left;
+            font-size: 13px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(59,65,81,.2);
+        }
+
+        table tbody tr td {
+            text-align: left;
+            vertical-align: top;
+            font-size: 14px;
+            padding: 12px 0;
+            color: #3b4151;
+        }
+
+        pre{
+            display: block;
+            padding: 0.5em;
+            background: rgb(51, 51, 51);
+            color: #fff;
+            font-size: 13px;
+            border-radius: 3px;
+            width: auto;
+            word-wrap: break-word;
+            max-height: 200px;
+            white-space: pre;
+            margin-top: .5rem;
+            overflow-y: auto;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        pre code{
+            white-space: pre-wrap!important;
+            word-break: break-all;
+        }
+
+        pre span{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            color: #fff;
+            background-color: #3aa561;
+            text-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+            padding: 4px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+        }
+
+        .soon{
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            color: #fff;
+            background-color: #dc3545;
+            text-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 10px;
+            font-weight: 700;
+            border: 1px solid #e6283b;
+            box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
         }
     </style>
+    
 </head>
 <body>
     <div class="app">
-        <h1>UDPtime</h1>
-        <div class="container">
+
+        <header>
+            <h1><span>UDP</span>time</h1>
             <p>
                 UDPtime is a hobby project built to ping UDP protocols like Steam dedicated servers and display status using <a href="https://github.com/louislam/uptime-kuma" target="_new">Uptime Kuma</a>.
             </p>
-            <h3>Standard <b>Coming soon</b></h3>
-            <ul>
-                <li><strong>Endpoint:</strong> /standard/ip-adress-port</li>
-                <li>
-                    <strong>Args:</strong>
-                    <ul>
-                        <li><strong>ip:</strong> (requierd) server ip with port</li>
-                    </ul>
-                </li>
-                <li><strong>Return:</strong> json</li>
-            </ul>
-            <h3>Steam</h3>
-            <ul>
-                <li><strong>Endpoint:</strong> /steam/game-type-id/ip-adress</li>
-                <li>
-                    <strong>Args:</strong>
-                    <ul>
-                        <li><strong>id:</strong> (requierd) game type id</li>
-                        <li><strong>ip:</strong> (requierd) server ip without port</li>
-                    </ul>
-                </li>
-                <li><strong>Return:</strong> json</li>
-            </ul>
-            <p style="text-align: center;">Supported Games can be <a href="https://github.com/gamedig/node-gamedig" target="_new">found here</a>.</p>
+        </header>
+
+        <div class="container">
+            <span class="soon">
+                Soon
+            </span>
+            <div class="toggle">
+                <label class="btn"><span class="method">GET</span> /standard/&#60;ip-adress&#62; <span class="icon">&#8964;</span></label>
+                <div class="content" id="standard">
+                    <h2>Parameters</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td width="23%">
+                                        &#60;ip-adress&#62;
+                                    </td>
+                                    <td>
+                                        IP and port
+                                        <pre><span>string</span><code>127.0.0.1:1337</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </thead>
+                    </table>
+
+                    <h2>Responses</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Code
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td width="23%">
+                                        200
+                                    </td>
+                                    <td>Example
+                                        <pre><span>json</span><code>{}</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </thead>
+                    </table>
+                </div>
+            </div>
         </div>
+
+        <div class="container">
+            <div class="toggle">
+                <label class="btn"> <span class="method">GET</span> /steam/&#60;id&#62;/&#60;ip-adress&#62; <span class="icon">&#8964;</span></label>
+                <div class="content" id="steam">
+                    <h2>Parameters</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td width="23%">
+                                        &#60;id&#62;
+                                    </td>
+                                    <td>
+                                        List of supported games can be <a href="https://github.com/gamedig/node-gamedig" target="_new">found here</a>.
+                                        <pre><span>string</span><code>valheim</code></pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &#60;ip-adress&#62;
+                                    </td>
+                                    <td>
+                                        IP only
+                                        <pre><span>string</span><code>127.0.0.1</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </thead>
+                    </table>
+
+                    <h2>Responses</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    Code
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td width="23%">
+                                        200
+                                    </td>
+                                    <td>Example
+<pre><span>json</span><code>{
+    "status": "online",
+    "response": {
+        "name": "Valheim #01",
+        "map": "Valheim #01",
+        "password": true,
+        "raw": {
+            "protocol": 17,
+            "folder": "valheim",
+            "game": "",
+            "appId": 892970,
+            "numplayers": 0,
+            "numbots": 0,
+            "listentype": "d",
+            "environment": "l",
+            "secure": 0,
+            "version": "1.0.0.0",
+            "steamid": "33333333300000000",
+            "tags": [
+                "0.203.11"
+            ]
+        },
+        "maxplayers": 64,
+        "players": [
+            
+        ],
+        "bots": [
+            
+        ],
+        "connect": "127.0.0.1:2456",
+        "ping": 25
+    }
+}</code></pre>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+
         <footer>
             <p>Powered by <a href="https://github.com/mattiasghodsian/udptime" target="_new">UDPtime</a></p>
         </footer>
     </div>
+    <script>
+
+        document.addEventListener("click", function (event) {
+
+            if (!event.target.matches(".btn")) return;
+
+            event.preventDefault();
+            const parent = event.target.parentNode;
+            parent.classList.toggle("active");
+
+        }, false);
+
+    </script>
 </body>
 </html>
