@@ -1,6 +1,8 @@
 ## Overview
 UDPtime is a hobby project built to ping UDP protocols like Steam dedicated servers and display status using <a href="https://github.com/louislam/uptime-kuma" target="_new">Uptime Kuma</a>. Supported Games can be [found here](https://github.com/gamedig/node-gamedig).
 
+![screenshot](https://i.imgur.com/l9sE6bt.png)
+
 
 ## Requirements
 - [NPM](https://www.npmjs.com/get-npm)
